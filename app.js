@@ -1,14 +1,11 @@
-
-//Usamos la api en esta ubicacion
 //http://localhost:3000/api/articulos/
-
 
 const express = require('express');
 const mysql = require('mysql');
 const cors = require('cors');
 
 let app = express();
-//Como vamos a ingresar datos en json ponemos para que hacepte su uso
+
 app.use(express.json());
 //Cors para poder pedir la informacion desde una pagina externa 
 app.use(cors());
@@ -19,7 +16,7 @@ var conexion = mysql.createConnection({
     password:'',
     database:'articulosdb'
 });
-//Realizamos la conexion
+
 conexion.connect(function(err){
     if(err){
         throw err;
